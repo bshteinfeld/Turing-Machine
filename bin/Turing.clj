@@ -37,15 +37,6 @@ string representation of that tuple - used for printing the trace."
                                     (clojure.string/split-lines 
                                       (slurp filename)))))))))
 
-(defn read3 [filename]
-  ;(reduce vector-to-tuple ;(map #(into [] %) 
-                             ;(butlast 
-                               (clojure.string/split 
-                                 (clojure.string/split-lines (slurp filename)) 
-                                 #"\s+");))
-          ;{}
-          );)
-
 (defn read-tuples-from-file 
   "Takes a filepath and returns a map of tuples contained in the file."
   [filename]
