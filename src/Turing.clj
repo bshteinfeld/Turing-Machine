@@ -10,7 +10,7 @@
   [s]
   (->> (str s)
     (seq)
-    (first)))
+    (first))
 
 (defn vector-to-tuple
   "Function used to set up the map of tuples. The map of tupels is set up
@@ -27,15 +27,6 @@ integers, input output and direction are characters)."
 string representation of that tuple - used for printing the trace."
   [[s i ns o d]]
   (str "S: " s " I: " i " NS: " ns " O: " o " D: " d))
-
-(defn read2 [filename] 
-  (reduce vector-to-tuple
-   {}
-   (into [] (map #(into [] %) 
-                 (map #(remove empty? %) 
-                      (butlast (map #(clojure.string/split % #"\s")  
-                                    (clojure.string/split-lines 
-                                      (slurp filename)))))))))
 
 (defn read-tuples-from-file 
   "Takes a filepath and returns a map of tuples contained in the file."
